@@ -1,6 +1,7 @@
 {
     "name": "keboola/sync-actions-client",
     "description": "Sync actions PHP Client",
+    "type": "library",
     "license": "MIT",
     "require": {
         "php": "^8.2",
