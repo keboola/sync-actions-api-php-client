@@ -61,10 +61,10 @@ class Client
         $this->guzzle = $this->initClient($publicApiUrl, $storageToken, $options);
     }
 
-    public function callAction(JobData $jobData): array
+    public function callAction(ActionData $actionData): array
     {
         try {
-            $jobDataJson = json_encode($jobData->getArray(), JSON_THROW_ON_ERROR);
+            $jobDataJson = json_encode($actionData->getArray(), JSON_THROW_ON_ERROR);
             $request = new Request('POST', 'actions', [], $jobDataJson);
         } catch (JsonException $e) {
             throw new SyncActionsClientException('Invalid job data: ' . $e->getMessage(), $e->getCode(), $e);
