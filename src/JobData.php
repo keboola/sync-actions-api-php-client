@@ -4,15 +4,26 @@ declare(strict_types=1);
 
 namespace Keboola\SyncActionsClient;
 
-readonly class JobData
+class JobData
 {
+    private string $componentId;
+    private string $action;
+    private array $configData;
+    private ?string $tag;
+    private ?string $branchId;
+
     public function __construct(
-        private string $componentId,
-        private string $action,
-        private array $configData = [],
-        private ?string $tag = null,
-        private ?string $branchId = null,
+        string $componentId,
+        string $action,
+        array $configData = [],
+        ?string $tag = null,
+        ?string $branchId = null
     ) {
+        $this->componentId = $componentId;
+        $this->action = $action;
+        $this->configData = $configData;
+        $this->tag = $tag;
+        $this->branchId = $branchId;
     }
 
     public function getArray(): array
