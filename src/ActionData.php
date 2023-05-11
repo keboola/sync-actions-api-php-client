@@ -28,12 +28,19 @@ class ActionData
 
     public function getArray(): array
     {
-        return [
+        $returnData = [
             'componentId' => $this->componentId,
             'action' => $this->action,
             'configData' => $this->configData,
-            'tag' => $this->tag,
-            'branchId' => $this->branchId,
         ];
+
+        if ($this->tag !== null) {
+            $returnData['tag'] = $this->tag;
+        }
+        if ($this->branchId !== null) {
+            $returnData['branchId'] = $this->branchId;
+        }
+
+        return $returnData;
     }
 }

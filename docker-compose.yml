@@ -5,3 +5,6 @@ services:
     volumes:
       - ./:/code
       - ./data:/data
+    environment:
+      - KBC_SYNC_ACTIONS_URL
+      - KBC_TOKEN

@@ -12,6 +12,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\MessageFormatter;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Uri;
 use JsonException;
 use Keboola\SyncActionsClient\Exception\ClientException as SyncActionsClientException;
 use Keboola\SyncActionsClient\Exception\ResponseException;
@@ -74,7 +75,7 @@ class Client
 
     public function getActions(string $componentId): array
     {
-        $request = new Request('GET', sprintf('actions/%s', $componentId));
+        $request = new Request('GET', sprintf('actions?componentId=%s', $componentId));
         return $this->sendRequest($request);
     }
 
