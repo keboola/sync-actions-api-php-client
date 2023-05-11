@@ -29,7 +29,7 @@ class ActionData
     public function getArray(): array
     {
         return [
-            'component' => $this->componentId,
+            'componentIdk' => $this->componentId,
             'action' => $this->action,
             'configData' => $this->configData,
             'tag' => $this->tag,
