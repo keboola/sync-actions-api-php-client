@@ -45,7 +45,7 @@ class ClientFunctionalTest extends TestCase
                 'parameters' => [
                     'dataset' => 'in.c-ex-currency-test',
                 ],
-            ]
+            ],
         ));
 
         self::assertArrayHasKey('datasets', $response);
@@ -67,7 +67,7 @@ class ClientFunctionalTest extends TestCase
         self::expectException(ClientException::class);
         self::expectExceptionMessage(sprintf(
             'Action \"unexistAction\" not defined for component \"%s\".',
-            self::COMPONENT_ID
+            self::COMPONENT_ID,
         ));
         $client->callAction(new ActionData(self::COMPONENT_ID, 'unexistAction', []));
     }
