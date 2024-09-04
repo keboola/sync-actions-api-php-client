@@ -17,7 +17,7 @@ class ActionData
         string $action,
         array $configData = [],
         ?string $tag = null,
-        ?string $branchId = null
+        ?string $branchId = null,
     ) {
         $this->componentId = $componentId;
         $this->action = $action;

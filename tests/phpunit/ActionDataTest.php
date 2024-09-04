@@ -18,7 +18,7 @@ class ActionDataTest extends TestCase
                 'action' => 'action',
                 'configData' => [],
             ],
-            $jobData->getArray()
+            $jobData->getArray(),
         );
     }
 
@@ -40,7 +40,7 @@ class ActionDataTest extends TestCase
                 'branchId' => '123456',
                 'configData' => ['foo' => 'bar'],
             ],
-            $jobData->getArray()
+            $jobData->getArray(),
         );
     }
 }
